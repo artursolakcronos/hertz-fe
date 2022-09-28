@@ -1,0 +1,19 @@
+<h2>Artist List</h2>
+<table class="table table-striped">
+  <thead>
+    <th> First Name</th>
+    <th> Last Name</th>
+    <th> Email </th>
+    <th> Actions </th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let artist of artists">
+      <td> {{ artist.firstName }} </td>
+      <td> {{ artist.lastName }} </td>
+      <td> {{ artist.email }} </td>
+      <td>
+        <button class="btn btn-info" (click)="updateArtist(artist.id)"> Edit </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
