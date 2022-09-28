@@ -9,6 +9,8 @@ import { ArtistListComponent } from './artist-list/artist-list.component';
 import { CreateArtistComponent } from './create-artist/create-artist.component';
 import { UpdateArtistComponent } from './update-artist/update-artist.component';
 import { ArtistDetailsComponent } from './artist-details/artist-details.component';
+import { EventListComponent } from './event-list/event-list.component';
+import { CreateEventComponent } from './create-event/create-event.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ArtistDetailsComponent } from './artist-details/artist-details.componen
     ArtistListComponent,
     CreateArtistComponent,
     UpdateArtistComponent,
-    ArtistDetailsComponent
+    ArtistDetailsComponent,
+    EventListComponent,
+    CreateEventComponent
   ],
   imports: [
     BrowserModule,

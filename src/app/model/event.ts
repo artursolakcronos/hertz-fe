@@ -1,10 +1,14 @@
-export class Artist {
+import { Artist } from "./artist";
+
+export class Event {
 
   id!: number;
-  firstName!: string;
-  lastName!: string;
-  nickname!: string;
-  email!: string;
-  phoneNumber!: string;
+  name!: string;
+  location!: string;
+  description!: string;
+  capacity!: string;
+  eventDate!: Date;
+  flyerPath!: string;
+  artists!: Artist[];
 
 }

@@ -1,0 +1,22 @@
+<h2>Next events: </h2>
+<table class="table table-responsive">
+  <thead>
+    <th> Name</th>
+    <th> Location </th>
+    <th> Capacity </th>
+    <th> Date </th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let event of events">
+      <td> {{ event.name }} </td>
+      <td> {{ event.location }} </td>
+      <td> {{ event.capacity }} </td>
+      <td> {{ event.eventDate }} </td>
+      <td>
+        <button class="btn btn-info" (click)="updateEvent(event.id)"> Edit </button>
+        <button class="btn btn-danger" style="margin-left: 10px" (click)="deleteEvent(event.id)"> Delete </button>
+        <button class="btn btn-warning" style="margin-left: 10px" (click)="eventDetails(event.id)"> Info </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
