@@ -19,19 +19,17 @@ export class CreateArtistComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.artist);
     this.saveArtist();
-    this.getToArtistList();
+    this.goToArtistList();
   }
 
   saveArtist() {
     this.artistService.createArtist(this.artist).subscribe(response => {
-      console.log(response);
     },
       error => console.error(error));
   }
 
-  getToArtistList() {
+  goToArtistList() {
     this.router.navigate(['/artists'])
   }
 

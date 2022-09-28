@@ -19,9 +19,7 @@ export class ArtistListComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.artistService.getArtistList().subscribe(response => {
-      this.artists = response;
-    });
+    this.getArtists();
 
     new Observable(data => {
       setTimeout(() => { }, 2000);
@@ -31,7 +29,28 @@ export class ArtistListComponent implements OnInit {
 
   }
 
+  getArtists() {
+    this.artistService.getArtistList().subscribe(response => {
+      this.artists = response;
+    });
+
+  }
+
   updateArtist(id: number) {
     this.router.navigate(['update-artist', id])
+  }
+
+  deleteArtist(id: number) {
+    if (confirm("Are you sure to delete artist with id: " + id + "?")) {
+      this.artistService.deleteArtist(id).subscribe(response => {
+        console.info(response);
+        this.getArtists();
+      }, error => console.error(error)
+      )
+    }
+  }
+
+  artistDetails(id: number) {
+    this.router.navigate(['artist-details', id])
   }
 }

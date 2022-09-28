@@ -10,7 +10,7 @@ import ArtistService from '../service/artist.service';
 })
 export class UpdateArtistComponent implements OnInit {
 
-  artist: any;
+  artist: Artist = new Artist();
   id!: number;
 
   constructor(private artistService: ArtistService,
@@ -26,9 +26,11 @@ export class UpdateArtistComponent implements OnInit {
 
   onSubmit() {
     this.artistService.updateArtist(this.id, this.artist).subscribe(response => {
-      this.goToArtistList;
+      this.goToArtistList();
+
     },
       error => console.error(error));
+
   }
 
   goToArtistList() {

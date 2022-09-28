@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Artist } from '../model/artist';
@@ -9,7 +9,6 @@ import { Artist } from '../model/artist';
 export default class ArtistService {
 
   private baseURL = "http://localhost:8080/artists";
-  private updateURL = "http://localhost:8080/update-artist"
 
   constructor(private http: HttpClient) {
 
@@ -25,13 +24,18 @@ export default class ArtistService {
   }
 
 
-  getArtistById(id: number): Observable<Object> {
-    return this.http.get(`${this.baseURL}/${id}`);
+  getArtistById(id: number): Observable<Artist> {
+    return this.http.get<Artist>(`${this.baseURL}/${id}`);
   }
 
 
-  updateArtist(id: number, artist: Artist): Observable<Object> {
-    return this.http.put(`${this.updateURL}/${id}`, artist);
+  updateArtist(id: number, artist: Artist): Observable<Artist> {
+    return this.http.put<Artist>(`${this.baseURL}/${id}`, artist);
+  }
+
+
+  deleteArtist(id: number): Observable<Object> {
+    return this.http.delete<Artist>(`${this.baseURL}/${id}`);
   }
 
 }

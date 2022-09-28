@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { ArtistListComponent } from './artist-list/artist-list.component';
 import { CreateArtistComponent } from './create-artist/create-artist.component';
 import { UpdateArtistComponent } from './update-artist/update-artist.component';
+import { ArtistDetailsComponent } from './artist-details/artist-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArtistListComponent,
     CreateArtistComponent,
-    UpdateArtistComponent
+    UpdateArtistComponent,
+    ArtistDetailsComponent
   ],
   imports: [
     BrowserModule,

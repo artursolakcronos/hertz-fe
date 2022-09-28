@@ -13,6 +13,8 @@
       <td> {{ artist.email }} </td>
       <td>
         <button class="btn btn-info" (click)="updateArtist(artist.id)"> Edit </button>
+        <button class="btn btn-danger" style="margin-left: 10px" (click)="deleteArtist(artist.id)"> Delete </button>
+        <button class="btn btn-info" style="margin-left: 10px" (click)="artistDetails(artist.id)"> Info </button>
       </td>
     </tr>
   </tbody>
